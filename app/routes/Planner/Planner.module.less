@@ -1,0 +1,505 @@
+.page {
+    position: fixed;
+    top: var(--planner-header-h, 4rem);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 24rem 1fr;
+    grid-template-rows: minmax(0, 1fr);
+    background-color: var(--md-sys-color-surface);
+    z-index: 1;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    padding: 1rem;
+    background-color: var(--md-sys-color-surface);
+    min-height: 0;
+    overflow: hidden;
+}
+
+.fields {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.swap {
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    border: 3px solid var(--md-sys-color-surface);
+    background-color: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: transform 0.25s ease, background-color 0.15s ease;
+
+    &:hover {
+        background-color: var(--md-sys-color-surface-container-highest);
+        transform: translateY(-50%) rotate(180deg);
+    }
+}
+
+.timeBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.875rem;
+    border-radius: 0.875rem;
+    border: 1px solid var(--md-sys-color-outline-variant);
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+    font: inherit;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+        background-color: var(--md-sys-color-surface-container);
+    }
+
+    > svg:first-of-type {
+        color: var(--md-sys-color-on-surface-variant);
+        flex-shrink: 0;
+    }
+}
+
+.timeBtnText {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    margin: 0 -0.5rem;
+    padding: 0 0.5rem;
+}
+
+.empty {
+    margin: 1rem 0;
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 0.9375rem;
+    text-align: center;
+}
+
+.summary {
+    margin: 0.25rem 0 0;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--md-sys-color-on-surface-variant);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.itineraries {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.itinerary {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background-color: var(--md-sys-color-surface-container-low);
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    text-align: left;
+    color: inherit;
+    font: inherit;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover {
+        background-color: var(--md-sys-color-surface-container);
+    }
+}
+
+
+.itineraryHead {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.itineraryTimes {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.itineraryMeta {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.itineraryDuration {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--md-sys-color-on-surface);
+    font-variant-numeric: tabular-nums;
+}
+
+.liveIcon {
+    display: inline-flex;
+    color: #16a34a;
+    animation: live-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes live-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.legs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+    min-height: 0;
+}
+
+.detailHead {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.detailBack {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+    flex-shrink: 0;
+
+    &:hover {
+        background-color: var(--md-sys-color-surface-container-high);
+        transform: translateX(-2px);
+    }
+}
+
+.detailTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    min-width: 0;
+}
+
+.detailTimes {
+    font-size: 1.125rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.detailSubtitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    color: var(--md-sys-color-on-surface-variant);
+    font-weight: 500;
+}
+
+.timeline {
+    list-style: none;
+    margin: 0 -0.5rem;
+    padding: 0 0.5rem 0.5rem;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.timelineItem {
+    display: block;
+    flex-shrink: 0;
+}
+
+.transitCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.875rem 1rem;
+    background-color: var(--md-sys-color-surface-container);
+    border-radius: 1rem;
+}
+
+.transitHead {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    min-width: 0;
+}
+
+.transitBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    height: 1.875rem;
+    padding: 0 0.625rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface);
+    flex-shrink: 0;
+
+    &.chipFirst {
+        border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    &.chipLast {
+        border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    &.chipMiddle {
+        border-radius: 0;
+    }
+}
+
+.transitBadgeIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+.routeGroup {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.chipOverflow {
+    background-color: var(--md-sys-color-surface-container-high) !important;
+    color: var(--md-sys-color-on-surface-variant) !important;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.transitLongName {
+    font-size: 0.875rem;
+    color: var(--md-sys-color-on-surface-variant);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+.transitStop {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 0;
+}
+
+.transitTime {
+    width: 3rem;
+    flex-shrink: 0;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--md-sys-color-on-surface);
+    font-variant-numeric: tabular-nums;
+}
+
+.transitStopDot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    border: 3px solid var(--md-sys-color-on-surface);
+    background-color: var(--md-sys-color-surface-container);
+    flex-shrink: 0;
+}
+
+.transitStopName {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+.transitMeta {
+    font-size: 0.8125rem;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-left: calc(3rem + 0.625rem);
+    padding: 0.25rem 0;
+}
+
+.walkRow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    margin-left: calc(3rem + 0.625rem - 0.375rem);
+}
+
+.walkDots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3125rem;
+    padding: 0.125rem 0;
+    width: 0.75rem;
+
+    > span {
+        width: 0.3125rem;
+        height: 0.3125rem;
+        border-radius: 50%;
+        background-color: var(--md-sys-color-on-surface-variant);
+        opacity: 0.65;
+    }
+}
+
+.walkBody {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    min-width: 0;
+}
+
+.walkPrimary {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.walkEndpoint {
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.walkSecondary {
+    font-size: 0.8125rem;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.legTransit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    background-color: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface);
+
+    &.chipFirst {
+        border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    &.chipLast {
+        border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    &.chipMiddle {
+        border-radius: 0;
+    }
+}
+
+.legTransitIcon {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+}
+
+.legWalk {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.mapWrap {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background-color: var(--md-sys-color-surface-container);
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.marker {
+    display: block;
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.markerFrom {
+    background-color: var(--md-sys-color-tertiary);
+}
+
+.markerTo {
+    background-color: var(--md-sys-color-primary);
+}

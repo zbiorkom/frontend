@@ -1,0 +1,186 @@
+{
+    "common": {
+        "back": "Wróć",
+        "cancel": "Anuluj",
+        "apply": "Zastosuj",
+        "close": "Zamknij",
+        "clear": "Wyczyść",
+        "loading": "Ładowanie…",
+        "notFound": "Nie znaleziono",
+        "search": "Szukaj",
+        "today": "Dziś",
+        "tomorrow": "Jutro"
+    },
+    "nav": {
+        "home": "Strona główna",
+        "cities": "Miasta",
+        "contact": "Kontakt",
+        "toggleMenu": "Przełącz menu",
+        "switchLanguage": "Zmień język"
+    },
+    "footer": {
+        "privacy": "Polityka prywatności",
+        "contact": "Kontakt"
+    },
+    "error": {
+        "generic": {
+            "title": "Ups!",
+            "details": "Wystąpił nieoczekiwany błąd."
+        },
+        "http": {
+            "title": "Błąd"
+        },
+        "notFound": {
+            "details": "Nie udało się znaleźć żądanej strony."
+        }
+    },
+    "home": {
+        "citiesTitle": "Obsługiwane miasta",
+        "titleQuestion": "Gdzie dziś jedziesz?",
+        "titleAnswer": "Zaplanujemy ci podróż.",
+        "features": {
+            "liveLocation": "Lokalizacja pojazdów na żywo",
+            "routes": "Trasy i mapy linii",
+            "timetables": "Rozkłady jazdy",
+            "planner": "Planer podróży"
+        },
+        "stores": {
+            "androidKicker": "Pobierz z",
+            "iosKicker": "Pobierz w"
+        },
+        "planner": {
+            "title": "Zaplanuj podróż",
+            "lead": "Wpisz skąd i dokąd chcesz jechać, a my znajdziemy najlepsze połączenie.",
+            "fromLabel": "Skąd",
+            "toLabel": "Dokąd",
+            "fromPlaceholder": "Skąd jedziesz?",
+            "toPlaceholder": "Dokąd jedziesz?",
+            "swap": "Zamień miejscami",
+            "submit": "Wyszukaj połączenia",
+            "departureNow": "Wyjazd teraz",
+            "departureAt": "Wyjazd o",
+            "arrivalAt": "Przyjazd o",
+            "departureAtFormatted": "Wyjazd {{datetime}}",
+            "arrivalAtFormatted": "Przyjazd {{datetime}}",
+            "timeTitle": "Kiedy jedziesz?",
+            "hourLabel": "Godzina",
+            "minuteLabel": "Minuta",
+            "incrementHour": "Następna godzina",
+            "decrementHour": "Poprzednia godzina",
+            "incrementMinute": "Następne minuty",
+            "decrementMinute": "Poprzednie minuty",
+            "datePart": "Data",
+            "timePart": "Godzina",
+            "quickNow": "Teraz",
+            "quickPlus15": "+15 min",
+            "quickPlus30": "+30 min",
+            "quickPlus60": "+1 godz",
+            "live": "Na żywo",
+            "timeRange": "{{from}} – {{to}}",
+            "legWalk": "Spacer",
+            "legBike": "Rowerem",
+            "legCar": "Samochodem",
+            "stopCount_one": "{{count}} przystanek",
+            "stopCount_few": "{{count}} przystanki",
+            "stopCount_many": "{{count}} przystanków",
+            "stopCount_other": "{{count}} przystanków",
+            "loading": "Szukam połączeń…",
+            "noResults": "Brak połączeń dla tej trasy.",
+            "missing": "Wskaż początek i koniec podróży.",
+            "results": "Znaleziono {{count}} połączeń",
+            "results_one": "Znaleziono {{count}} połączenie",
+            "results_few": "Znaleziono {{count}} połączenia",
+            "results_many": "Znaleziono {{count}} połączeń",
+            "meta": {
+                "title": "Planer podróży | Zbiorkom.live",
+                "description": "Zaplanuj podróż komunikacją miejską — najlepsze połączenie w czasie rzeczywistym."
+            }
+        },
+        "meta": {
+            "title": "Zbiorkom.live",
+            "description": "Tętno transportu publicznego w czasie rzeczywistym"
+        }
+    },
+    "city": {
+        "heroLead_one": "Sprawdź na żywo komunikację miejską w mieście <strong>{{name}}</strong> — rozkłady jazdy, trasy linii oraz pozycje pojazdów {{agencyCount}} przewoźnika obsługującego łącznie {{routeCount}} linii. Tramwaje, autobusy, metro, kolej miejska — wszystko w jednym miejscu, w czasie rzeczywistym.",
+        "heroLead_other": "Sprawdź na żywo komunikację miejską w mieście <strong>{{name}}</strong> — rozkłady jazdy, trasy linii oraz pozycje pojazdów wszystkich {{agencyCount}} przewoźników obsługujących łącznie {{routeCount}} linii. Tramwaje, autobusy, metro, kolej miejska — wszystko w jednym miejscu, w czasie rzeczywistym.",
+        "lineCount_one": "{{count}} linia",
+        "lineCount_few": "{{count}} linie",
+        "lineCount_many": "{{count}} linii",
+        "lineCount_other": "{{count}} linii",
+        "meta": {
+            "title": "{{name}} — komunikacja miejska na żywo | Zbiorkom.live",
+            "description": "Rozkłady jazdy, trasy linii i pozycje pojazdów w mieście {{name}} w czasie rzeczywistym."
+        }
+    },
+    "agency": {
+        "backLabel": "Wróć do listy przewoźników",
+        "searchPlaceholder": "Szukaj linii…",
+        "description_one": "{{name}} obsługuje {{count}} linię w mieście {{cityName}}. Sprawdź pełne rozkłady jazdy, trasy oraz pozycje pojazdów w czasie rzeczywistym.",
+        "description_few": "{{name}} obsługuje {{count}} linie w mieście {{cityName}}. Sprawdź pełne rozkłady jazdy, trasy oraz pozycje pojazdów w czasie rzeczywistym.",
+        "description_many": "{{name}} obsługuje {{count}} linii w mieście {{cityName}}. Sprawdź pełne rozkłady jazdy, trasy oraz pozycje pojazdów w czasie rzeczywistym.",
+        "description_other": "{{name}} obsługuje {{count}} linii w mieście {{cityName}}. Sprawdź pełne rozkłady jazdy, trasy oraz pozycje pojazdów w czasie rzeczywistym.",
+        "noResults": "Brak linii pasujących do „{{query}}\".",
+        "groupOther": "Inne",
+        "meta": {
+            "title": "{{agency}} — {{city}} | Zbiorkom.live",
+            "description": "Linie i rozkłady jazdy przewoźnika {{agency}} w mieście {{city}} na żywo."
+        }
+    },
+    "route": {
+        "backLabel": "Wróć do listy linii",
+        "directionHint": "w kierunku",
+        "directionFallback": "Kierunek {{n}}",
+        "meta": {
+            "titleWithCity": "Linia {{name}} — {{city}} | Zbiorkom.live",
+            "titleOnly": "Linia {{name}} | Zbiorkom.live",
+            "description": "Rozkład jazdy, trasa i pozycje pojazdów linii {{name}} ({{longName}}) w mieście {{city}} na żywo."
+        }
+    },
+    "stopTimetable": {
+        "backLabel": "Wróć do linii",
+        "selectDay": "Wybierz dzień",
+        "empty": "Brak kursów dla wybranego dnia.",
+        "weekdays": ["Nd", "Pn", "Wt", "Śr", "Cz", "Pt", "Sb"],
+        "months": ["sty", "lut", "mar", "kwi", "maj", "cze", "lip", "sie", "wrz", "paź", "lis", "gru"],
+        "meta": {
+            "title": "Linia {{routeName}} — {{stopName}} | Zbiorkom.live",
+            "fallbackTitle": "Rozkład | Zbiorkom.live",
+            "description": "Rozkład jazdy linii {{routeName}} z przystanku {{stopName}} w mieście {{city}}."
+        }
+    },
+    "cityCategory": {
+        "lowerSilesian": "Dolnośląskie",
+        "kuyavianPomeranian": "Kujawsko-Pomorskie",
+        "lodz": "Łódzkie",
+        "lublin": "Lubelskie",
+        "lubusz": "Lubuskie",
+        "lesserPoland": "Małopolskie",
+        "masovian": "Mazowieckie",
+        "opole": "Opolskie",
+        "subcarpathian": "Podkarpackie",
+        "podlasie": "Podlaskie",
+        "pomeranian": "Pomorskie",
+        "silesian": "Śląskie",
+        "holyCross": "Świętokrzyskie",
+        "warmianMasurian": "Warmińsko-Mazurskie",
+        "greaterPoland": "Wielkopolskie",
+        "westPomeranian": "Zachodniopomorskie",
+        "finland": "Finlandia",
+        "sweden": "Szwecja",
+        "netherlands": "Holandia",
+        "virtual": "Wirtualne"
+    },
+    "vehicleType": {
+        "tram": "Tramwaje",
+        "subway": "Metro",
+        "train": "Kolej",
+        "bus": "Autobusy",
+        "ferry": "Promy",
+        "cableTram": "Tramwaje linowe",
+        "aerialLift": "Kolejki linowe",
+        "funicular": "Kolejki linowo-terenowe",
+        "trolleybus": "Trolejbusy",
+        "monorail": "Monorail"
+    }
+}

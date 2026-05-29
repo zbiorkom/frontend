@@ -1,0 +1,178 @@
+{
+    "common": {
+        "back": "Back",
+        "cancel": "Cancel",
+        "apply": "Apply",
+        "close": "Close",
+        "clear": "Clear",
+        "loading": "Loading…",
+        "notFound": "Not found",
+        "search": "Search",
+        "today": "Today",
+        "tomorrow": "Tomorrow"
+    },
+    "nav": {
+        "home": "Home",
+        "cities": "Cities",
+        "contact": "Contact",
+        "toggleMenu": "Toggle menu",
+        "switchLanguage": "Change language"
+    },
+    "footer": {
+        "privacy": "Privacy policy",
+        "contact": "Contact"
+    },
+    "error": {
+        "generic": {
+            "title": "Oops!",
+            "details": "An unexpected error occurred."
+        },
+        "http": {
+            "title": "Error"
+        },
+        "notFound": {
+            "details": "The requested page could not be found."
+        }
+    },
+    "home": {
+        "citiesTitle": "Supported cities",
+        "titleQuestion": "Where to today?",
+        "titleAnswer": "We'll plan your trip.",
+        "features": {
+            "liveLocation": "Live vehicle locations",
+            "routes": "Line routes and maps",
+            "timetables": "Timetables",
+            "planner": "Journey planner"
+        },
+        "stores": {
+            "androidKicker": "Get it on",
+            "iosKicker": "Download on the"
+        },
+        "planner": {
+            "title": "Plan a trip",
+            "lead": "Enter where you're starting and where you're going — we'll find the best connection.",
+            "fromLabel": "From",
+            "toLabel": "To",
+            "fromPlaceholder": "Where from?",
+            "toPlaceholder": "Where to?",
+            "swap": "Swap origin and destination",
+            "submit": "Find routes",
+            "departureNow": "Leave now",
+            "departureAt": "Leave at",
+            "arrivalAt": "Arrive by",
+            "departureAtFormatted": "Leave at {{datetime}}",
+            "arrivalAtFormatted": "Arrive by {{datetime}}",
+            "timeTitle": "When are you going?",
+            "hourLabel": "Hour",
+            "minuteLabel": "Minute",
+            "incrementHour": "Next hour",
+            "decrementHour": "Previous hour",
+            "incrementMinute": "Next minutes",
+            "decrementMinute": "Previous minutes",
+            "datePart": "Date",
+            "timePart": "Time",
+            "quickNow": "Now",
+            "quickPlus15": "+15 min",
+            "quickPlus30": "+30 min",
+            "quickPlus60": "+1 hr",
+            "live": "Live",
+            "timeRange": "{{from}} – {{to}}",
+            "legWalk": "Walk",
+            "legBike": "Bike",
+            "legCar": "Drive",
+            "stopCount_one": "{{count}} stop",
+            "stopCount_other": "{{count}} stops",
+            "loading": "Searching for connections…",
+            "noResults": "No connections for this route.",
+            "missing": "Pick a start and an end.",
+            "results_one": "{{count}} connection found",
+            "results_other": "{{count}} connections found",
+            "meta": {
+                "title": "Journey planner | Zbiorkom.live",
+                "description": "Plan your trip with real-time public transit data."
+            }
+        },
+        "meta": {
+            "title": "Zbiorkom.live",
+            "description": "The Kinetic Pulse of Transit"
+        }
+    },
+    "city": {
+        "heroLead_one": "Check public transit in <strong>{{name}}</strong> live — timetables, line routes, and real-time positions of vehicles from {{agencyCount}} operator running {{routeCount}} lines. Trams, buses, metro, urban rail — all in one place, in real time.",
+        "heroLead_other": "Check public transit in <strong>{{name}}</strong> live — timetables, line routes, and real-time positions of vehicles from all {{agencyCount}} operators running {{routeCount}} lines. Trams, buses, metro, urban rail — all in one place, in real time.",
+        "lineCount_one": "{{count}} line",
+        "lineCount_other": "{{count}} lines",
+        "meta": {
+            "title": "{{name}} — live public transit | Zbiorkom.live",
+            "description": "Timetables, line routes, and real-time vehicle positions in {{name}}."
+        }
+    },
+    "agency": {
+        "backLabel": "Back to operators",
+        "searchPlaceholder": "Search lines…",
+        "description_one": "{{name}} operates {{count}} line in {{cityName}}. See full timetables, routes, and real-time vehicle positions.",
+        "description_other": "{{name}} operates {{count}} lines in {{cityName}}. See full timetables, routes, and real-time vehicle positions.",
+        "noResults": "No lines match \"{{query}}\".",
+        "groupOther": "Other",
+        "meta": {
+            "title": "{{agency}} — {{city}} | Zbiorkom.live",
+            "description": "Lines and timetables of {{agency}} in {{city}}, live."
+        }
+    },
+    "route": {
+        "backLabel": "Back to lines",
+        "directionHint": "towards",
+        "directionFallback": "Direction {{n}}",
+        "meta": {
+            "titleWithCity": "Line {{name}} — {{city}} | Zbiorkom.live",
+            "titleOnly": "Line {{name}} | Zbiorkom.live",
+            "description": "Timetable, route, and vehicle positions of line {{name}} ({{longName}}) in {{city}}, live."
+        }
+    },
+    "stopTimetable": {
+        "backLabel": "Back to line",
+        "selectDay": "Select day",
+        "empty": "No departures for the selected day.",
+        "weekdays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        "meta": {
+            "title": "Line {{routeName}} — {{stopName}} | Zbiorkom.live",
+            "fallbackTitle": "Timetable | Zbiorkom.live",
+            "description": "Timetable for line {{routeName}} from stop {{stopName}} in {{city}}."
+        }
+    },
+    "cityCategory": {
+        "lowerSilesian": "Lower Silesian",
+        "kuyavianPomeranian": "Kuyavian-Pomeranian",
+        "lodz": "Łódź",
+        "lublin": "Lublin",
+        "lubusz": "Lubusz",
+        "lesserPoland": "Lesser Poland",
+        "masovian": "Masovian",
+        "opole": "Opole",
+        "subcarpathian": "Subcarpathian",
+        "podlasie": "Podlaskie",
+        "pomeranian": "Pomeranian",
+        "silesian": "Silesian",
+        "holyCross": "Holy Cross",
+        "warmianMasurian": "Warmian-Masurian",
+        "greaterPoland": "Greater Poland",
+        "westPomeranian": "West Pomeranian",
+        "finland": "Finland",
+        "sweden": "Sweden",
+        "netherlands": "Netherlands",
+        "virtual": "Virtual"
+    },
+    "vehicleType": {
+        "tram": "Trams",
+        "subway": "Metro",
+        "train": "Rail",
+        "bus": "Buses",
+        "ferry": "Ferries",
+        "cableTram": "Cable trams",
+        "aerialLift": "Aerial lifts",
+        "funicular": "Funiculars",
+        "trolleybus": "Trolleybuses",
+        "monorail": "Monorail"
+    }
+}

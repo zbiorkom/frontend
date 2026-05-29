@@ -1,0 +1,216 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1rem;
+}
+
+.head {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface);
+    text-decoration: none;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+
+    svg {
+        width: 20px;
+        height: 20px;
+        transform: rotate(180deg);
+    }
+
+    &:hover {
+        background-color: var(--md-sys-color-primary-container);
+        color: var(--md-sys-color-on-primary-container);
+        transform: translateX(-2px);
+    }
+}
+
+.badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    min-width: 72px;
+    height: 72px;
+    padding: 10px 14px;
+    border-radius: 20px;
+
+    svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    span {
+        font-weight: 700;
+        font-size: 1.25rem;
+        line-height: 1;
+    }
+}
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+}
+
+.stopName {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--md-sys-color-on-surface);
+    line-height: 1.2;
+}
+
+.stopCode {
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.routeLongName {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.dateBar {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+}
+
+.dateTab {
+    flex: 0 0 auto;
+    padding: 0.5rem 0.9rem;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface);
+    font: inherit;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+        background-color: var(--md-sys-color-surface-container-high);
+    }
+
+    &.active {
+        font-weight: 700;
+    }
+}
+
+.hours {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-variant-numeric: tabular-nums;
+}
+
+.hourRow {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 0;
+    background-color: var(--md-sys-color-surface-container);
+
+    &:first-child {
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+    }
+
+    &:last-child {
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+}
+
+.hourLabel {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.minutesList {
+    color: var(--md-sys-color-on-surface);
+    line-height: 1.6;
+}
+
+.minute {
+    display: inline-block;
+    min-width: 1.75rem;
+    margin-right: 0.55rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.empty {
+    margin: 0;
+    padding: 1.25rem;
+    text-align: center;
+    border-radius: 16px;
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+@media (max-width: 600px) {
+    .head {
+        gap: 0.75rem;
+    }
+    .badge {
+        min-width: 60px;
+        height: 60px;
+        padding: 8px 10px;
+        border-radius: 16px;
+
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        span {
+            font-size: 1.05rem;
+        }
+    }
+    .stopName {
+        font-size: 1.2rem;
+    }
+    .routeLongName {
+        font-size: 0.85rem;
+    }
+    .hourRow {
+        grid-template-columns: 34px 1fr;
+        gap: 0.75rem;
+        padding: 0.5rem 0.85rem;
+    }
+    .hourLabel {
+        font-size: 0.95rem;
+    }
+    .minute {
+        min-width: 1.5rem;
+        margin-right: 0.4rem;
+        font-size: 0.95rem;
+    }
+}
