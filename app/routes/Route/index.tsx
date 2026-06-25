@@ -12,6 +12,11 @@ import styles from "./Route.module.less";
 
 const ROW_HEIGHT = 56;
 
+// Track 1 is the main trunk (center). Render it last so it paints above the side lanes.
+const MAIN_TRACK = 1;
+const byTrackPaint = (a: readonly [unknown, number], b: readonly [unknown, number]) =>
+    (a[1] === MAIN_TRACK ? 1 : 0) - (b[1] === MAIN_TRACK ? 1 : 0);
+
 export const loader = async ({ params }: Route.LoaderArgs) => {
     const city = await getCity(params.city!);
     if (!city) return redirect("/404");
@@ -117,10 +122,7 @@ export default ({ loaderData }: Route.ComponentProps) => {
                         aria-haspopup="listbox"
                         aria-expanded={menuOpen}
                     >
-                        <span
-                            className={styles.dirTriggerHint}
-                            style={{ color: theme.primaryContainer }}
-                        >
+                        <span className={styles.dirTriggerHint} style={{ color: theme.primaryContainer }}>
                             {t("route.directionHint")}
                         </span>
                         <span className={styles.dirTriggerLabel}>
@@ -136,7 +138,10 @@ export default ({ loaderData }: Route.ComponentProps) => {
                     {menuOpen && (
                         <ul className={styles.dirMenu} role="listbox">
                             {graph.map((d, i) => {
-                                const headsign = getHeadsign(d as never, t("route.directionFallback", { n: i + 1 }));
+                                const headsign = getHeadsign(
+                                    d as never,
+                                    t("route.directionFallback", { n: i + 1 }),
+                                );
                                 const isActive = activeDir === i;
                                 return (
                                     <li key={i} role="presentation">
@@ -163,9 +168,7 @@ export default ({ loaderData }: Route.ComponentProps) => {
                                             <span className={styles.dirOptionArrow} aria-hidden>
                                                 <ArrowRight />
                                             </span>
-                                            <span className={styles.dirOptionLabel}>
-                                                {headsign}
-                                            </span>
+                                            <span className={styles.dirOptionLabel}>{headsign}</span>
                                         </button>
                                     </li>
                                 );
@@ -197,32 +200,26 @@ export default ({ loaderData }: Route.ComponentProps) => {
                                         viewBox={`0 0 ${width} ${ROW_HEIGHT}`}
                                         aria-hidden
                                     >
-                                        {paths.map(([d, track], pi) => (
+                                        {[...paths].sort(byTrackPaint).map(([d, track], pi) => (
                                             <path
                                                 key={pi}
                                                 d={d}
-                                                stroke={
-                                                    theme.trackColors[
-                                                        track % theme.trackColors.length
-                                                    ]
-                                                }
-                                                strokeWidth={4}
+                                                stroke={theme.trackColors[track % theme.trackColors.length]}
+                                                strokeWidth={5}
                                                 strokeLinecap="round"
                                                 strokeLinejoin="round"
                                                 fill="none"
                                             />
                                         ))}
-                                        {nodes.map(([x, track], ni) => (
+                                        {[...nodes].sort(byTrackPaint).map(([x, track], ni) => (
                                             <circle
                                                 key={ni}
                                                 cx={x}
                                                 cy={ROW_HEIGHT / 2}
-                                                r={6}
-                                                fill={
-                                                    theme.trackColors[
-                                                        track % theme.trackColors.length
-                                                    ]
-                                                }
+                                                r={7}
+                                                fill="#fff"
+                                                stroke={theme.trackColors[track % theme.trackColors.length]}
+                                                strokeWidth={4}
                                             />
                                         ))}
                                     </svg>

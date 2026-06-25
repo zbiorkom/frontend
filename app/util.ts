@@ -24,11 +24,11 @@ export const computeRouteTheme = (color: string): RouteTheme => {
         primaryContainer: scheme.primaryContainer,
         onPrimaryContainer: scheme.onPrimaryContainer,
         trackColors: [
-            scheme.getTone("primary", 40),
             scheme.getTone("tertiary", 40),
+            scheme.getTone("primary", 40),
             scheme.getTone("secondary", 40),
-            scheme.getTone("primary", 30),
             scheme.getTone("tertiary", 30),
+            scheme.getTone("primary", 30),
             scheme.getTone("secondary", 30),
             scheme.getTone("primary", 50),
             scheme.getTone("tertiary", 50),
@@ -105,24 +105,16 @@ export const decodePlannerEndpoint = (value: string): PlannerEndpoint | null => 
     return { location: [lon, lat], name };
 };
 
-const apiBase = () =>
-    (typeof window === "undefined" ? process.env.API_BASE : import.meta.env.VITE_API_BASE)!;
+const apiBase = () => (typeof window === "undefined" ? process.env.API_BASE : import.meta.env.VITE_API_BASE)!;
 
-export const geocode = async (
-    city: string,
-    query: string,
-    signal?: AbortSignal,
-): Promise<GeocodeMatch[]> => {
+export const geocode = async (city: string, query: string, signal?: AbortSignal): Promise<GeocodeMatch[]> => {
     const url = `${apiBase()}/${city}/plan/geocode?query=${encodeURIComponent(query)}`;
     return fetch(url, { signal })
         .then((res) => (res.ok ? (res.json() as Promise<GeocodeMatch[]>) : []))
         .catch(() => [] as GeocodeMatch[]);
 };
 
-export const reverseGeocode = async (
-    city: string,
-    location: Point,
-): Promise<GeocodeMatch | null> => {
+export const reverseGeocode = async (city: string, location: Point): Promise<GeocodeMatch | null> => {
     const url = `${apiBase()}/${city}/plan/reverseGeocode?location=${location[0]},${location[1]}`;
     return fetch(url)
         .then((res) => (res.ok ? (res.json() as Promise<GeocodeMatch>) : null))
@@ -148,30 +140,22 @@ export const plan = async (
     });
     if (opts.time) params.set("time", opts.time);
     if (opts.isArrivalTime) params.set("isArrivalTime", "true");
-    if (opts.pedestrianSpeed !== undefined)
-        params.set("pedestrianSpeed", String(opts.pedestrianSpeed));
-    if (opts.cyclingSpeed !== undefined)
-        params.set("cyclingSpeed", String(opts.cyclingSpeed));
+    if (opts.pedestrianSpeed !== undefined) params.set("pedestrianSpeed", String(opts.pedestrianSpeed));
+    if (opts.cyclingSpeed !== undefined) params.set("cyclingSpeed", String(opts.cyclingSpeed));
     const url = `${apiBase()}/${city}/plan?${params.toString()}`;
     return fetch(url)
         .then((res) => (res.ok ? (res.json() as Promise<PlanResponse>) : null))
         .catch(() => null);
 };
 
-export const getPlanEtas = async (
-    city: string,
-    keys: string[],
-): Promise<PlanEtasResponse> => {
+export const getPlanEtas = async (city: string, keys: string[]): Promise<PlanEtasResponse> => {
     const url = `${apiBase()}/${city}/plan/etas?keys=${keys.join(",")}`;
     return fetch(url)
         .then((res) => (res.ok ? (res.json() as Promise<PlanEtasResponse>) : []))
         .catch(() => [] as PlanEtasResponse);
 };
 
-export const getPlanRealtime = async (
-    city: string,
-    key: string,
-): Promise<PlanRealtimeResponse> => {
+export const getPlanRealtime = async (city: string, key: string): Promise<PlanRealtimeResponse> => {
     const url = `${apiBase()}/${city}/plan/realtime?key=${key}`;
     return fetch(url)
         .then((res) => (res.ok ? (res.json() as Promise<PlanRealtimeResponse>) : []))
