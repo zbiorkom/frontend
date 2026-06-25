@@ -9,17 +9,26 @@ const navClass = ({ isActive }: { isActive: boolean }) => `${isActive ? styles.a
 const routes = [
     { to: "/", labelKey: "nav.home" },
     { to: "/cities", labelKey: "nav.cities" },
+    { to: "/about", labelKey: "nav.about" },
     { to: "/contact", labelKey: "nav.contact" },
 ] as const;
 
 export default () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation();
     const { t } = useTranslation();
 
     useEffect(() => {
         setIsMenuOpen(false);
     }, [location.pathname]);
+
+    useEffect(() => {
+        const onScroll = () => setIsScrolled(window.scrollY > 0);
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
     useEffect(() => {
         if (isMenuOpen) {
@@ -42,7 +51,9 @@ export default () => {
                 className={`${styles.backdrop} ${isMenuOpen ? styles.open : ""}`}
                 onClick={() => setIsMenuOpen(false)}
             />
-            <header className={isMenuOpen ? styles.open : ""}>
+            <header
+                className={`${isMenuOpen ? styles.open : ""} ${isScrolled ? styles.scrolled : ""}`}
+            >
                 <div className={styles.headerTop}>
                     <Link to="/" className={styles.logo}>
                         <Logo className={styles.icon} />

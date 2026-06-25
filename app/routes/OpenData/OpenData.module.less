@@ -1,0 +1,297 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 1.5rem 0 4rem;
+    max-width: 56rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ---- Hero ---- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.titleRow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+}
+
+.intro {
+    margin: 0;
+    max-width: 70ch;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+/* ---- Terms-of-use notice (yellow callout) ---- */
+.terms {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.1rem 1.25rem;
+    border-radius: 0.85rem;
+    border: 1px solid #f1c40f;
+    background-color: #fff8dc;
+    color: #4a3b00;
+
+    p {
+        margin: 0;
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+    strong {
+        color: #3a2e00;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+}
+
+.termsTitle {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* ---- Endpoint section ---- */
+.endpoint {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    scroll-margin-top: 1.5rem;
+}
+
+.epTitle {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.sig {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-self: flex-start;
+    max-width: 100%;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.75rem;
+    background-color: var(--md-sys-color-surface-container-high);
+}
+
+.method {
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+}
+
+.path {
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    font-size: 0.92rem;
+    color: var(--md-sys-color-on-surface);
+    word-break: break-all;
+}
+
+.formatTag {
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+}
+
+.binaryNote {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0 0 0.6rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.desc {
+    margin: 0;
+    max-width: 75ch;
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.subhead {
+    margin: 0 0 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+/* ---- Parameters ---- */
+.paramList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.param {
+    display: grid;
+    grid-template-columns: minmax(8rem, auto) 1fr;
+    align-items: baseline;
+    gap: 0.4rem 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    dt {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    dd {
+        margin: 0;
+        font-size: 0.92rem;
+        line-height: 1.5;
+        color: var(--md-sys-color-on-surface-variant);
+    }
+
+    @media (max-width: 520px) {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+    }
+}
+
+.paramName {
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--md-sys-color-on-surface);
+}
+
+.inTag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    background-color: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* ---- Conformance checklist (standardized formats) ---- */
+.spec {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 1rem 1.1rem;
+    border-radius: 0.85rem;
+    background-color: var(--md-sys-color-surface-container-low);
+}
+
+.specProfile {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.specCols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.specCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+
+    li {
+        display: grid;
+        grid-template-columns: 1.1rem 1fr;
+        gap: 0.55rem;
+        align-items: baseline;
+    }
+}
+
+.mark {
+    font-weight: 800;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.yes .mark {
+    color: var(--md-sys-color-primary);
+}
+
+.no .mark {
+    color: var(--md-sys-color-error);
+}
+
+.specText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.specCode {
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--md-sys-color-on-surface);
+    word-break: break-word;
+}
+
+.specDesc {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--md-sys-color-on-surface-variant);
+}

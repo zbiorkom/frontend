@@ -5,6 +5,7 @@ import { computeRouteTheme, getCity, getRouteGraph } from "~/util";
 import { ERoute, ERouteGraphStop, EStop, VehicleType } from "~/typings";
 import { typeIcons } from "~/constants";
 import { ArrowRight } from "~/components/UI/Icons";
+import BackButton from "~/components/BackButton/BackButton";
 import i18n from "~/i18n";
 import type { Route } from "./+types";
 import styles from "./Route.module.less";
@@ -85,13 +86,7 @@ export default ({ loaderData }: Route.ComponentProps) => {
     return (
         <div className={styles.page}>
             <div className={styles.head}>
-                <Link
-                    to={`/${cityId}/${agency.id}`}
-                    className={styles.back}
-                    aria-label={t("route.backLabel")}
-                >
-                    <ArrowRight />
-                </Link>
+                <BackButton to={`/${cityId}/${agency.id}`} label={t("route.backLabel")} />
                 <div
                     className={styles.badge}
                     style={{

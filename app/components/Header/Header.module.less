@@ -2,18 +2,21 @@ header {
     display: flex;
     flex-direction: column;
     padding: 0.5rem 1rem;
-    background-color: var(--md-sys-color-primary-container);
-    color: var(--md-sys-color-on-primary-container);
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    position: relative;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface);
+    position: sticky;
+    top: 0;
     z-index: 100;
-    transition: all 0.2s ease;
+    transition: box-shadow 0.2s ease;
 
     @media (min-width: 768px) {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+    }
+
+    &.scrolled {
+        box-shadow: 0 4px 16px -8px rgb(0 0 0 / 0.25);
     }
 }
 
@@ -34,13 +37,13 @@ header {
     font-size: 2rem;
     padding-left: 0.3rem;
     padding-right: 1rem;
-    color: inherit;
+    color: var(--md-sys-color-primary);
     text-decoration: none;
     border-radius: 1rem;
     transition: all 0.2s ease;
 
     &:hover {
-        background-color: #ffffff80;
+        background-color: var(--md-sys-color-surface-container-high);
     }
 
     .icon {
@@ -87,7 +90,7 @@ header {
     .bar {
         width: 2rem;
         height: 0.25rem;
-        background: var(--md-sys-color-on-primary-container);
+        background: var(--md-sys-color-on-surface);
         border-radius: 10px;
         transition: all 0.2s ease;
         position: relative;
@@ -130,7 +133,7 @@ header {
     }
 
     a {
-        color: var(--md-sys-color-on-primary-container);
+        color: var(--md-sys-color-on-surface);
         text-decoration: none;
         font-weight: 600;
         border-radius: 0.5rem;
@@ -144,14 +147,15 @@ header {
         }
 
         &:hover {
-            background-color: #ffffff80;
+            background-color: var(--md-sys-color-surface-container-high);
             font-weight: 700;
         }
 
         &.active {
             font-weight: 900;
             position: relative;
-            background-color: #ffffff80;
+            color: var(--md-sys-color-primary);
+            background-color: var(--md-sys-color-surface-container-high);
 
             @media (min-width: 768px) {
                 background-color: transparent;
@@ -164,7 +168,7 @@ header {
                 right: 12px;
                 bottom: -0.25rem;
                 height: 2px;
-                background-color: var(--md-sys-color-on-primary-container);
+                background-color: var(--md-sys-color-primary);
                 border-radius: 1rem;
                 display: none;
 

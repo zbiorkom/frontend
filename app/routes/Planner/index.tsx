@@ -24,6 +24,7 @@ import {
     getPlanEtas,
     plan,
 } from "~/util";
+import BackButton from "~/components/BackButton/BackButton";
 import i18n from "~/i18n";
 import styles from "./Planner.module.less";
 
@@ -502,14 +503,7 @@ const DetailView = ({ itinerary, eta, agencyIcons, from, to, lang, onBack }: Det
     return (
         <div className={styles.detail}>
             <div className={styles.detailHead}>
-                <button
-                    type="button"
-                    className={styles.detailBack}
-                    onClick={onBack}
-                    aria-label={t("common.back")}
-                >
-                    <BackIcon />
-                </button>
+                <BackButton onClick={onBack} label={t("common.back")} />
                 <div className={styles.detailTitle}>
                     <span className={styles.detailTimes}>
                         {eta
@@ -694,15 +688,6 @@ const ClockIcon = () => (
 const ChevronIcon = () => (
     <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden>
         <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
-    </svg>
-);
-
-const BackIcon = () => (
-    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden>
-        <path
-            fill="currentColor"
-            d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20z"
-        />
     </svg>
 );
 

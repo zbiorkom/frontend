@@ -1,0 +1,105 @@
+.block {
+    margin: 0;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: var(--md-sys-color-inverse-surface);
+    color: var(--md-sys-color-inverse-on-surface);
+    border: 1px solid color-mix(in srgb, var(--md-sys-color-inverse-on-surface) 12%, transparent);
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 0.5rem 0.4rem 1rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--md-sys-color-inverse-on-surface) 12%, transparent);
+}
+
+.lang {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.75;
+}
+
+.copy {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--md-sys-color-inverse-on-surface);
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    cursor: pointer;
+    opacity: 0.85;
+
+    &:hover {
+        background-color: color-mix(in srgb, var(--md-sys-color-inverse-on-surface) 12%, transparent);
+        opacity: 1;
+    }
+}
+
+.pre {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+    font-family: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    tab-size: 2;
+
+    code {
+        font-family: inherit;
+        white-space: pre;
+    }
+}
+
+.more {
+    display: block;
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed color-mix(in srgb, var(--md-sys-color-inverse-on-surface) 25%, transparent);
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* ---- Syntax theme (highlight.js classes), tuned for the dark olive panel ---- */
+.pre :global(.hljs-comment),
+.pre :global(.hljs-quote) {
+    color: #9aa28c;
+    font-style: italic;
+}
+
+.pre :global(.hljs-attr),
+.pre :global(.hljs-attribute),
+.pre :global(.hljs-property) {
+    color: var(--md-sys-color-primary-fixed-dim);
+}
+
+.pre :global(.hljs-string),
+.pre :global(.hljs-meta-string) {
+    color: #c9e29a;
+}
+
+.pre :global(.hljs-number),
+.pre :global(.hljs-literal),
+.pre :global(.hljs-built_in) {
+    color: var(--md-sys-color-tertiary-fixed-dim);
+}
+
+.pre :global(.hljs-keyword),
+.pre :global(.hljs-selector-tag),
+.pre :global(.hljs-name) {
+    color: var(--md-sys-color-secondary-fixed-dim);
+}
+
+.pre :global(.hljs-tag) {
+    color: #9aa28c;
+}
+
+.pre :global(.hljs-punctuation) {
+    opacity: 0.7;
+}

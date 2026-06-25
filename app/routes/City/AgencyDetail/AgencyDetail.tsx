@@ -4,7 +4,8 @@ import { useTranslation } from "react-i18next";
 import { useWindowVirtualizer } from "@tanstack/react-virtual";
 import { ERoute, type Agency, type Route as RouteData } from "~/typings";
 import { vehicleTypeI18nKeys } from "~/constants";
-import { ArrowRight, Search } from "~/components/UI/Icons";
+import { Database, Search } from "~/components/UI/Icons";
+import BackButton from "~/components/BackButton/BackButton";
 import Route from "~/components/Route/Route";
 import type { RouteTheme } from "~/util";
 import styles from "./AgencyDetail.module.less";
@@ -115,15 +116,14 @@ export default ({ city, cityName, agency, routes }: Props) => {
     return (
         <div className={styles.detail}>
             <div className={styles.titleRow}>
-                <Link
-                    to={`/${city}`}
-                    className={styles.back}
-                    aria-label={t("agency.backLabel")}
-                >
-                    <ArrowRight />
-                </Link>
+                <BackButton to={`/${city}`} label={t("agency.backLabel")} />
                 <h2>{agency.name}</h2>
             </div>
+
+            <Link to={`/${city}/${agency.id}/opendata`} className={styles.openData}>
+                <Database className={styles.openDataIcon} />
+                {t("nav.openData")}
+            </Link>
 
             <p className={styles.description}>{description}</p>
 

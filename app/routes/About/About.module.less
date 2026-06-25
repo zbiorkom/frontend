@@ -1,0 +1,319 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    padding: 3rem 0 6rem;
+    width: 100%;
+    max-width: 64rem;
+    margin: 0 auto;
+}
+
+/* ---- Shared typography ---- */
+.kicker {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    width: fit-content;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.32rem 0.8rem;
+    border-radius: 999px;
+    color: var(--md-sys-color-on-primary-container);
+    background: var(--md-sys-color-primary-container);
+}
+
+.h2 {
+    margin: 0;
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+}
+
+.lead {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.sub {
+    margin: 0;
+    font-size: 0.98rem;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.sectionHead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.7rem;
+}
+
+.sectionHead .kicker {
+    align-self: center;
+}
+
+/* ---- Author hero ---- */
+.hero {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.heroText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.name {
+    margin: 0;
+    font-size: clamp(2.6rem, 6vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.035em;
+    color: var(--md-sys-color-on-surface);
+}
+
+.role {
+    margin: -0.3rem 0 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--md-sys-color-primary);
+}
+
+/* Photo card — MD3 large shape, gentle hover lift. */
+.heroMedia,
+.projectMedia {
+    display: flex;
+}
+
+.photoCard {
+    margin: 0;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 1.75rem;
+    overflow: hidden;
+    background: var(--md-sys-color-surface-container-high);
+    box-shadow: 0 1px 3px color-mix(in srgb, var(--md-sys-color-shadow) 20%, transparent);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    &:hover {
+        box-shadow: 0 24px 48px -20px color-mix(in srgb, var(--md-sys-color-shadow) 45%, transparent);
+
+        img {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.projectMedia .photoCard {
+    aspect-ratio: 16 / 12;
+}
+
+/* ---- Stats strip ---- */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    padding: 2rem;
+    border-radius: 1.75rem;
+    background: var(--md-sys-color-surface-container);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+    position: relative;
+
+    &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: -0.625rem;
+        top: 15%;
+        bottom: 15%;
+        width: 1px;
+        background: var(--md-sys-color-outline-variant);
+    }
+}
+
+.statValue {
+    font-size: clamp(2rem, 5vw, 2.9rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--md-sys-color-primary);
+}
+
+.statLabel {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+/* ---- Project section ---- */
+.project {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.projectText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+/* ---- Partners ---- */
+.partners {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+/* ---- Testimonials ---- */
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    height: 100%;
+    margin: 0;
+    padding: 1.75rem 1.5rem 1.5rem;
+    border-radius: 1.5rem;
+    background: var(--md-sys-color-surface-container-low);
+    border: 1px solid var(--md-sys-color-outline-variant);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.3s ease, background 0.25s ease,
+        border-color 0.25s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        background: var(--md-sys-color-surface-container-high);
+        border-color: transparent;
+        box-shadow: 0 18px 36px -16px color-mix(in srgb, var(--md-sys-color-shadow) 42%, transparent);
+    }
+}
+
+.quoteMark {
+    position: absolute;
+    top: -0.9rem;
+    right: 0.85rem;
+    font-size: 5.5rem;
+    line-height: 1;
+    font-family: Georgia, serif;
+    color: var(--md-sys-color-primary);
+    opacity: 0.14;
+    pointer-events: none;
+}
+
+.cardText {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--md-sys-color-on-surface);
+}
+
+.cardFoot {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.avatar {
+    display: grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--md-sys-color-on-tertiary-container);
+    background: var(--md-sys-color-tertiary-container);
+}
+
+.cardWho {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.cardAuthor {
+    font-weight: 700;
+}
+
+.cardRole {
+    font-size: 0.85rem;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .page {
+        gap: 4rem;
+    }
+
+    .hero,
+    .project {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .heroMedia {
+        order: -1;
+        justify-content: center;
+    }
+
+    .heroMedia .photoCard {
+        max-width: 16rem;
+        aspect-ratio: 1;
+    }
+
+    .projectMedia {
+        order: -1;
+    }
+
+    .stats {
+        padding: 1.5rem 1rem;
+        gap: 0.5rem;
+    }
+
+    .stat:not(:last-child)::after {
+        right: -0.25rem;
+    }
+}

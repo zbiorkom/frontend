@@ -18,29 +18,32 @@
     }
 }
 
-.back {
+.openData {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--md-sys-color-surface-container-high);
-    color: var(--md-sys-color-on-surface);
+    gap: 0.5rem;
+    align-self: flex-start;
+    padding: 0.55rem 1.1rem;
+    border-radius: 999px;
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    font-size: 0.95rem;
+    font-weight: 600;
     text-decoration: none;
     transition: background-color 0.15s ease, transform 0.15s ease;
 
-    svg {
-        width: 20px;
-        height: 20px;
-        transform: rotate(180deg);
+    &:hover,
+    &:focus-visible {
+        background-color: var(--md-sys-color-primary);
+        color: var(--md-sys-color-on-primary);
+        transform: translateY(-1px);
     }
+}
 
-    &:hover {
-        background-color: var(--md-sys-color-primary-container);
-        color: var(--md-sys-color-on-primary-container);
-        transform: translateX(-2px);
-    }
+.openDataIcon {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
 }
 
 .description {

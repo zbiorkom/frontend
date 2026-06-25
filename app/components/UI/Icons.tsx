@@ -96,3 +96,14 @@ export const ArrowRight = (props: React.SVGProps<SVGSVGElement>) => {
         </svg>
     );
 };
+
+export const Database = (props: React.SVGProps<SVGSVGElement>) => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <path
+                fill="currentColor"
+                d="M12 3c-4.42 0-8 1.34-8 3v12c0 1.66 3.58 3 8 3s8-1.34 8-3V6c0-1.66-3.58-3-8-3m6 15c0 .35-2.16 1.5-6 1.5s-6-1.15-6-1.5v-2.23c1.48.76 3.7 1.23 6 1.23s4.52-.47 6-1.23zm0-4.5c0 .35-2.16 1.5-6 1.5s-6-1.15-6-1.5v-2.23C7.48 11.03 9.7 11.5 12 11.5s4.52-.47 6-1.23zM12 10c-3.84 0-6-1.15-6-1.5S8.16 7 12 7s6 1.15 6 1.5S15.84 10 12 10"
+            />
+        </svg>
+    );
+};

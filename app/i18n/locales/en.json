@@ -14,13 +14,110 @@
     "nav": {
         "home": "Home",
         "cities": "Cities",
+        "about": "About",
+        "openData": "Open data",
         "contact": "Contact",
         "toggleMenu": "Toggle menu",
         "switchLanguage": "Change language"
     },
     "footer": {
         "privacy": "Privacy policy",
-        "contact": "Contact"
+        "contact": "Contact",
+        "pages": "Pages",
+        "description": "zbiorkom.live lets you track public transport in real time — live vehicle positions, timetables, and journey planning, all in one place."
+    },
+    "about": {
+        "meta": {
+            "title": "About — zbiorkom.live",
+            "description": "Meet the author of zbiorkom.live, learn what the project is, see our partners and user reviews."
+        },
+        "author": {
+            "kicker": "About the author",
+            "name": "Dominik Skarżyński",
+            "role": "Creator & developer of zbiorkom.live",
+            "bio": "Hi! I'm a developer in love with public transport and open data. zbiorkom.live started as a weekend project and today helps thousands of passengers track trams, buses and trains in real time. I build it after hours, obsessing over every detail — because I believe great transit starts with great information.",
+            "support": "Support me",
+            "photoAlt": "Photo of the author"
+        },
+        "stats": {
+            "cities": "cities covered",
+            "operators": "operators",
+            "rides": "rides per month"
+        },
+        "project": {
+            "kicker": "About the project",
+            "title": "What is zbiorkom?",
+            "description": "zbiorkom.live is a platform that gathers data from dozens of operators across Poland and shows it in one simple place. Live vehicle positions, accurate timetables, line maps and a journey planner — all so you never miss your bus again. We're all about open data, speed, and an interface that's a joy to use.",
+            "photoAlt": "Public transport"
+        },
+        "partners": {
+            "kicker": "Trusted by",
+            "title": "Companies we work with",
+            "subtitle": "Drag to scroll — hover to reveal the colors",
+            "visit": "Visit {{name}}"
+        },
+        "testimonials": {
+            "kicker": "Reviews",
+            "title": "What users say",
+            "items": [
+                {
+                    "text": "Finally an app that actually knows where my tram is. I use it every single day on my commute!",
+                    "author": "Anna Kowalska",
+                    "role": "Commuter, Wrocław"
+                },
+                {
+                    "text": "The zbiorkom.live open data saved our hackathon. The docs are exemplary and the API is lightning fast.",
+                    "author": "Marek Nowak",
+                    "role": "Developer"
+                },
+                {
+                    "text": "The journey planner suggests connections better than the operators' own apps. Highly recommend!",
+                    "author": "Julia Wiśniewska",
+                    "role": "Student, Kraków"
+                },
+                {
+                    "text": "The prettiest and fastest public transport service in Poland. You can feel the passion in every detail.",
+                    "author": "Piotr Zieliński",
+                    "role": "Transit enthusiast"
+                }
+            ]
+        },
+        "support": {
+            "title": "Support me",
+            "subtitle": "I build zbiorkom.live after hours — your support pays the servers and buys me time to grow it.",
+            "popular": "Popular",
+            "ticketKicker": "Support ticket",
+            "fareLabel": "Your support",
+            "detailLabel": "Your details",
+            "secure": "Secure, encrypted payment",
+            "impacts": {
+                "coffee": "☕ You'll buy me a coffee — thank you!",
+                "day": "🚍 You'll cover the servers for a whole day",
+                "city": "🗺️ You'll help add a new city to the map",
+                "patron": "🌟 You become a zbiorkom.live patron"
+            },
+            "amountLabel": "Choose an amount",
+            "customAmount": "Other",
+            "customPlaceholder": "Enter amount",
+            "currency": "PLN",
+            "firstName": "First name",
+            "lastName": "Last name",
+            "email": "E-mail",
+            "message": "Message (optional)",
+            "messagePlaceholder": "Leave a kind word…",
+            "submit": "Donate {{amount}} PLN",
+            "submitGeneric": "Donate",
+            "submitting": "Processing…",
+            "successTitle": "Thank you for your support! 💚",
+            "successDetail": "Your donation of {{amount}} PLN powers the development of zbiorkom.live. See you on the road!",
+            "donateAgain": "Donate again",
+            "errors": {
+                "amount": "Enter a valid amount",
+                "firstName": "Enter your first name",
+                "lastName": "Enter your last name",
+                "email": "Enter a valid e-mail address"
+            }
+        }
     },
     "error": {
         "generic": {
@@ -139,6 +236,236 @@
             "title": "Line {{routeName}} — {{stopName}} | Zbiorkom.live",
             "fallbackTitle": "Timetable | Zbiorkom.live",
             "description": "Timetable for line {{routeName}} from stop {{stopName}} in {{city}}."
+        }
+    },
+    "openData": {
+        "meta": {
+            "title": "Open data API — {{agency}}, {{city}} | Zbiorkom.live",
+            "description": "Open API endpoints (GTFS, GTFS-Realtime, NeTEx, SIRI) for operator {{agency}} in {{city}} — parameters and response types."
+        },
+        "title": "Open data API",
+        "intro": "Public-transit open API with {{agency}} ({{city}}) data — schedules (GTFS, NeTEx) and real-time feeds (GTFS-Realtime, SIRI).",
+        "terms": {
+            "title": "zbiorkom.live Open Data Terms of Use",
+            "intro": "The data provided by zbiorkom.live (GTFS, GTFS-Realtime, NeTEx, SIRI files and API responses) constitutes a database that has been processed, verified and structured by zbiorkom.live (including aggregation and deduplication of sources, per-operator feed generation, synthesis of parent stations and platforms, quality control, and delay propagation). zbiorkom.live holds rights in this database (including the sui generis database right under the Polish Act of 27 July 2001 on the protection of databases) as well as rights in the structure and selection of the data.",
+            "attributionTitle": "Attribution requirement.",
+            "attribution": "Any use of this data requires visible attribution: \"Data: zbiorkom.live\" together with a link to zbiorkom.live. The attribution must be persistently and clearly visible to the end user within the interface that consumes the data — in a footer, on the transit-data screen, or in an equivalent, always-accessible location. Placing the attribution in temporary elements (e.g. a modal, an \"about\" screen, an expandable panel) is acceptable only where the user has easy and obvious access to it; hiding the attribution solely in documentation or source code does not satisfy this requirement.",
+            "nonCommercialTitle": "Non-commercial and hobby use.",
+            "nonCommercial": "Use for non-commercial, educational, research and hobby purposes is fully permitted, with no volume limits, subject to reasonable load on the infrastructure (fair use — no excessive traffic, no activity that disrupts the service). Simply retain the attribution described above.",
+            "commercialTitle": "Commercial use.",
+            "commercial": "Use of the data in commercial projects (including for-profit products or services, ad-supported apps, paid offerings) requires prior contact and agreement of terms before any use begins. Requests should be sent to admin@zbiorkom.live. Until terms are agreed, commercial use of the data is not permitted."
+        },
+        "baseUrlLabel": "Base URL",
+        "breadcrumb": { "root": "Open data" },
+        "conventions": {
+            "title": "Shared conventions",
+            "prefix": {
+                "title": "Path prefix",
+                "text": "Every endpoint has the form /api6-open/:city/… and uses the GET method."
+            },
+            "coords": {
+                "title": "Coordinates",
+                "text": "Returned as [longitude, latitude] (lon, lat)."
+            },
+            "time": {
+                "title": "Time",
+                "text": "Timestamps in JSON fields are Unix milliseconds; delays are in milliseconds too. GTFS-RT and SIRI use seconds / ISO-8601."
+            },
+            "cors": {
+                "title": "CORS",
+                "text": "Cross-origin requests are allowed — you can call the API straight from the browser."
+            },
+            "city": {
+                "title": "City (:city)",
+                "text": "City or metro-area identifier, e.g. warsaw, krakow, gzm, tricity."
+            },
+            "agency": {
+                "title": "Operator (:agency)",
+                "text": "Operator identifier within a city. The value default means the main operator."
+            }
+        },
+        "overview": "Overview",
+        "endpointsTitle": "API endpoints",
+        "live": "Live",
+        "cacheLabel": "Cache",
+        "responseTitle": "Response",
+        "responseBinaryNote": "Binary response — no preview; open or download it.",
+        "specIncluded": "Included",
+        "specExcluded": "Not included",
+        "errorsTitle": "Possible errors",
+        "paramsTitle": "Parameters",
+        "paramName": "Name",
+        "paramIn": "In",
+        "paramRequired": "Required",
+        "paramDesc": "Description",
+        "required": "yes",
+        "optional": "no",
+        "truncated": "… response truncated in preview.",
+        "prev": "Previous",
+        "next": "Next",
+        "allEndpoints": "All endpoints",
+        "builder": {
+            "title": "Try the endpoint",
+            "lead": "Pick a city and operator, fill in the parameters, then send the request and see the live response.",
+            "urlLabel": "Request URL",
+            "copy": "Copy",
+            "copied": "Copied!",
+            "open": "Open / Test",
+            "optional": "optional",
+            "tryIt": "Try it"
+        },
+        "explorer": {
+            "optionalParams": "Optional parameters",
+            "send": "Send",
+            "sending": "Sending…",
+            "download": "Download / Open",
+            "responseLabel": "Response",
+            "binaryNote": "This response is a binary file (ZIP / protobuf) — open or download it in a new tab instead of previewing it in the browser.",
+            "networkError": "Could not fetch the response"
+        },
+        "fields": {
+            "city": "City / metro area",
+            "agency": "Operator",
+            "agencies": "Operators",
+            "agenciesFilter": "Operator filter",
+            "stopSlug": "Stop identifier",
+            "bbox": "Bounding box (bbox)",
+            "feedTypes": "Feed types",
+            "formatJson": "JSON format (no suffix = protobuf)",
+            "routesFilter": "Line filter",
+            "limit": "Limit",
+            "time": "Start time"
+        },
+        "hints": {
+            "city": "City or metro-area identifier (e.g. warsaw, krakow, gzm).",
+            "agency": "Operator identifier; default is the main operator.",
+            "agencies": "Operator identifier; default is the main operator.",
+            "agenciesFilter": "Operator filter — comma-separated identifiers.",
+            "stopSlug": "Stop identifier (slug).",
+            "bbox": "Bounding box: minLon,minLat,maxLon,maxLat.",
+            "feedTypes": "vehiclePositions and/or tripUpdates, comma-separated (the format is chosen by the variant above).",
+            "feedTypesSiri": "estimatedTimetable and/or vehicleMonitoring, comma-separated (the format is chosen by the variant above).",
+            "routesFilter": "Comma-separated line names, e.g. 1,2,3.",
+            "limit": "Number of departures (default 20).",
+            "time": "Search start time in Unix milliseconds (default now)."
+        },
+        "ep": {
+            "meta": { "title": "{{name}} — open API | Zbiorkom.live" },
+            "stops": {
+                "title": "Stop list",
+                "summary": "All stops in a city with location and vehicle types.",
+                "about": "Returns the list of all stops in the selected city. Each stop is a tuple with its identifier, name, code, location [lon, lat] and the vehicle types that call there."
+            },
+            "departures": {
+                "title": "Stop departures",
+                "summary": "Upcoming departures from a stop with real-time data.",
+                "about": "Upcoming departures from the selected stop, including delays and cancellations. You can filter by operators and lines and set a limit and start time."
+            },
+            "positions": {
+                "title": "Vehicle positions",
+                "summary": "Real-time vehicle positions within a bounding box.",
+                "about": "Real-time vehicle positions within a given bounding box. Each vehicle includes its location, bearing, delay and upcoming stops."
+            },
+            "gtfs": {
+                "title": "GTFS (static)",
+                "summary": "Static GTFS dataset as a downloadable ZIP.",
+                "about": "Download the static GTFS schedule dataset (ZIP) for the selected operator. The standard format for importing into transit tooling."
+            },
+            "gtfs-realtime": {
+                "title": "GTFS-Realtime",
+                "summary": "Real-time data: TripUpdates and VehiclePositions.",
+                "about": "Real-time data in the GTFS-Realtime format — trip updates (TripUpdates) and vehicle positions (VehiclePositions). Available as binary protobuf or JSON."
+            },
+            "netex": {
+                "title": "NeTEx (static)",
+                "summary": "Static NeTEx dataset (XML in a ZIP) to download.",
+                "about": "Download the static NeTEx schedule dataset (ZIP with XML) for the selected operator — the European standard for transit data exchange."
+            },
+            "siri": {
+                "title": "SIRI 2.0",
+                "summary": "Real-time data in the SIRI 2.0 (XML) format.",
+                "about": "Real-time data in the SIRI 2.0 (XML) format — estimated arrival times (EstimatedTimetable) and current vehicle positions (VehicleMonitoring)."
+            }
+        },
+        "spec": {
+            "gtfs": {
+                "profile": "GTFS Schedule (static). A ZIP of UTF-8 CSV files, aggregated and deduplicated across the city's source feeds, generated per operator.",
+                "items": {
+                    "agency": "Operator metadata, timezone Europe/Warsaw.",
+                    "feedInfo": "Publisher, contact, feed_lang = pl and generation version.",
+                    "attributions": "Single attribution entry — zbiorkom.live (producer/operator/authority).",
+                    "routes": "Lines with type and colors (hex, no leading #).",
+                    "trips": "Trips with block_id plus the non-standard brigade column.",
+                    "stops": "Stops with location_type, parent_station, platform_code; parent stations / platforms synthesized when needed.",
+                    "stopTimes": "Passing times (>24h allowed), pickup/drop-off types, stop_headsign, plus the non-standard platform column.",
+                    "shapes": "Route geometry (without shape_dist_traveled).",
+                    "calendar": "calendar.txt and calendar_dates.txt (each omitted when empty).",
+                    "frequencies": "Headway-based service (no exact_times; omitted when empty).",
+                    "transfers": "No transfer rules between stops.",
+                    "pathways": "No in-station navigation graph or levels.",
+                    "fares": "No fare data (legacy fares or GTFS-Fares v2).",
+                    "translations": "No translations file — single language (pl).",
+                    "distTraveled": "No shape_dist_traveled or timepoint columns.",
+                    "routeMeta": "No route_desc/route_url, agency_phone/agency_lang or feed default_lang."
+                }
+            },
+            "gtfs-realtime": {
+                "profile": "GTFS-Realtime 2.0, generated live. FULL_DATASET, timestamps in seconds, served as binary protobuf or JSON (+json suffix).",
+                "items": {
+                    "tripUpdates": "Trip descriptor + stopTimeUpdate with absolute arrival/departure times.",
+                    "vehiclePositions": "Position, bearing, currentStatus and currentStopSequence.",
+                    "skipped": "Cancelled stops/segments expressed per stop as SKIPPED.",
+                    "delayProp": "Delay propagated to following trips in a block (up to 5 ahead).",
+                    "formats": "Both binary protobuf and JSON output.",
+                    "alerts": "No service alerts / disruption messages.",
+                    "stopId": "Stops referenced by stop_sequence only, not stop_id.",
+                    "delayField": "No delay / uncertainty fields — absolute time is given instead.",
+                    "occupancy": "No occupancy or congestion level.",
+                    "tripScheduleRel": "No trip-level ADDED/CANCELED/DUPLICATED (cancellations are per-stop SKIPPED).",
+                    "tripMods": "No TripModifications / Shape / Stop (v2 trip-change entities)."
+                }
+            },
+            "netex": {
+                "profile": "NeTEx, EPIP profile (EU_PI), version 1.04. A ZIP with one XML file per operator.",
+                "items": {
+                    "resourceFrame": "DataSource, Authority and Operator metadata.",
+                    "siteFrame": "StopPlace + Quay with location, transport mode, type and compass.",
+                    "serviceFrame": "Network, Line, ScheduledStopPoint, journey patterns and stop assignments.",
+                    "calendarFrame": "Day types and operating periods mapped from GTFS calendar / calendar_dates.",
+                    "timetableFrame": "Service journeys with passing times; frequencies as HeadwayJourneyGroup.",
+                    "epip": "EPIP transport modes (tram, metro, rail, bus, water, funicular, cableway, trolleyBus).",
+                    "fares": "No FareFrame, tariffs or fare zones.",
+                    "interchanges": "No interchanges / connections.",
+                    "geometry": "No route geometry links — spatial shapes live only in GTFS shapes.txt.",
+                    "blocks": "No vehicle blocks, vehicle types or train numbers.",
+                    "flexible": "No flexible (on-demand) lines or services.",
+                    "accessibility": "No accessibility assessments or equipment details.",
+                    "entrances": "No station entrances, path links or levels.",
+                    "situations": "No situations / messages (that is the SIRI-SX domain)."
+                }
+            },
+            "siri": {
+                "profile": "SIRI 2.0. A GET snapshot (ServiceDelivery) — no subscriptions, no request/response mode. JSON by default, or XML with the +xml suffix.",
+                "items": {
+                    "et": "Estimated arrival/departure times, with Cancellation for cancelled calls.",
+                    "vm": "Live vehicle location, bearing and Delay.",
+                    "snapshot": "Full ServiceDelivery snapshot on a plain GET.",
+                    "formats": "Both XML and JSON output.",
+                    "sm": "No StopMonitoring (departures from a single stop).",
+                    "sx": "No SituationExchange (messages / disruptions).",
+                    "otherDeliveries": "No ProductionTimetable, GeneralMessage, ConnectionMonitoring or FacilityMonitoring.",
+                    "subscriptions": "No subscriptions or heartbeat.",
+                    "requestResponse": "No request/response filtering by LineRef / StopRef — the full snapshot is returned.",
+                    "occupancy": "No occupancy, onward/previous calls or arrival/departure status."
+                }
+            }
+        },
+        "errorDocs": {
+            "STOP_NOT_FOUND": "No stop with the given identifier exists.",
+            "AGENCY_NOT_FOUND": "The operator does not exist in the selected city.",
+            "GTFS_FILE_NOT_FOUND": "No GTFS file for the selected city and operator.",
+            "NETEX_FILE_NOT_FOUND": "No NeTEx file for the selected city and operator.",
+            "CITY_NOT_FOUND": "No city with the given identifier exists."
         }
     },
     "cityCategory": {
